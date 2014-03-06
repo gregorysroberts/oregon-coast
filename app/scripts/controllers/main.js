@@ -6,6 +6,6 @@ angular.module('oregonCoastApp')
     $scope.parks = parks;
     $scope.selectedPark = parks[0];
     $scope.setSelectedPark= function(park){
-    	setSelectedPark = park;
+    	$scope.selectedPark = park;
     };
   });
