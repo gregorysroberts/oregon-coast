@@ -1,8 +1,16 @@
 'use strict';
 
 angular.module('oregonCoastApp', [
-  'ui.router'
+  'ui.router',
+  'ngSanitize'
 ])
+
+  .filter('unsafe', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+    };
+  })
+
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise("/");

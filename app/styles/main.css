@@ -62,7 +62,21 @@ body {
 /* Custom classes */
 .park-details {
 /*  display: none;*/
-  color: red;
+  padding-left: 10%;
+  display: inline;
+  float: left;
+  width: 40%;
+}
+
+.park-names {
+  display: inline-block;
+  float: left;
+  width: 30%;
+}
+
+.park:hover {
+  cursor: pointer;
+  background-color: gray;
 }
 
 /* Responsive: Portrait tablets and up */
