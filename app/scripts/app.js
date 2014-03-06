@@ -1,16 +1,31 @@
 'use strict';
 
 angular.module('oregonCoastApp', [
-  'ngResource',
-  'ngRoute'
+  'ui.router'
 ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function ($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider.otherwise("/");
+
+    $stateProvider.state('main', {
+        url: '/',
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        resolve: {
+          'parks': function(ParksService) {
+             return ParksService.getParks();
+          }
+        }
       })
-      .otherwise({
-        redirectTo: '/'
-      });
+
+    $stateProvider.state('parks-details', {
+        url: '/parks/:park_id',
+        templateUrl: 'views/parks-details.html',
+        controller: 'ParksdetailsCtrl',
+        resolve: {
+          'parks': function(ParksService) {
+             return ParksService.getParks();
+          }
+        }
+      })
   });
