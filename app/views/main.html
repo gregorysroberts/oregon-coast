@@ -1,7 +1,15 @@
-<div class="header">
-  <h3 class="text-muted">oregon coast</h3>
+<div style="display:inline-block; float: left; width: 400px; background: purple;">
+
+	<div class="header">
+	  <h3 class="text-muted">oregon coast</h3>
+	</div>
+	<div ng-repeat="park in parks">
+		<div ng-click="setSelectedPark(park)">{{park.park_name}}</div>
+	</div>
+
 </div>
-<div ng-repeat="park in parks">{{park.park_name}}</div>
-<div class="park-details">Hidden Park details</div>
+<div class="park-details" style="display:inline; float:left;">
+	Park Name: {{selectedPark.park_name}}
+</div>
 
 
