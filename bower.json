@@ -8,7 +8,8 @@
     "jquery": "~1.10.2",
     "bootstrap": "~3.0.3",
     "angular-ui-router": "0.2.8-bowratic-tedium",
-    "angular-sanitize": "*"
+    "angular-sanitize": "*",
+    "firebase": "*"
   },
   "devDependencies": {
     "angular-mocks": "1.2.6",

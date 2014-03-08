@@ -65,18 +65,22 @@ body {
   padding-left: 10%;
   display: inline;
   float: left;
-  width: 40%;
+  width: 60%;
 }
 
 .park-names {
   display: inline-block;
   float: left;
-  width: 30%;
+  width: 40%;
 }
 
 .park:hover {
   cursor: pointer;
   background-color: gray;
+}
+
+.tips {
+  width: 100%;
 }
 
 /* Responsive: Portrait tablets and up */

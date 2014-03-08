@@ -25,4 +25,16 @@ angular.module('oregonCoastApp', [
           }
         }
       })
+
+      $stateProvider.state('park', {
+      url: '/park/park_id',
+      templateUrl: 'views/park.html',
+      controller: 'ParkCtrl',
+      resolve: {
+        'parks': function(ParksService) {
+           return ParksService.getParks();
+        }
+      }
+    })
+
   });

@@ -10,11 +10,6 @@ angular.module('oregonCoastApp')
 		  		method: 'GET', 
 		  		url: 'http://oregonstateparks.org/data/index.cfm/parks'
 		  	}).success(function(data, status, headers, config) {
-		  		for (var i = 0; i < data.length; i++) {
-				  	if (parseInt(data[i].park_longitude) > -123.94) {
-				  		data.splice(i, 1);
-				  	}
-				}
 				deferred.resolve(data);
 
 

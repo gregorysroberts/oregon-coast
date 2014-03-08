@@ -3,15 +3,29 @@
 </div>
 
 <div class="park-names">	
-	<div class="park" ng-repeat="park in parks">
+	<div class="park" ng-repeat="park in parks | orderBy:park_latitude:reverse">
 		<div ng-click="setSelectedPark(park)">{{park.park_name}}</div>
 	</div>
 
 </div>
 
-<div class="park-details" style="display:inline; float:left;">
-	<p>Park Name: {{selectedPark.park_name}}</p>
-	<div ng-bind-html="selectedPark.park_narrative | unsafe"></div>
+<div class="park-details">
+	<h4>{{selectedPark.park_name}}</h4>
+
+	<div ng-bind-html="selectedPark.park_narrative | unsafe">
+	</div>
+
+	<h4>Area Tips</h4>	
+	<div class="row">
+	  <div class="col-lg-6">
+	    <div class="input-group">
+	      <input type="text" class="form-control">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button">Leave a Tip</button>
+	      </span>
+	    </div><!-- /input-group -->
+	  </div><!-- /.col-lg-6 -->
+	</div><!-- /.row -->
 
 </div>
 
