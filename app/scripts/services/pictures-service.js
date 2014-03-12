@@ -21,6 +21,5 @@ angular.module('oregonCoastApp')
 		  	return deferred.promise;
 		},
 	}
-    // AngularJS will instantiate a singleton by calling "new" on this function
   });
 

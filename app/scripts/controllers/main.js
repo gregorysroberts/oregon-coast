@@ -9,10 +9,10 @@ angular.module('oregonCoastApp')
 	  	}
 	}
 
-
-    $scope.selectedPark = parks[0];
-    $scope.setSelectedPark= function(park){
-    	$scope.selectedPark = park;
+      $scope.selectedPark = parks[0];
+      $scope.setSelectedPark= function(park){
+      $scope.selectedPark = park;
     };
+
   });
 

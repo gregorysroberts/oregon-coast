@@ -3,8 +3,8 @@
 </div>
 
 <div class="park-names">	
-	<div class="park" ng-repeat="park in parks | orderBy:park_latitude:reverse">
-		<div ng-click="setSelectedPark(park)"><a ng-href="#/park/{{park.park_id}}">{{park.park_name}}</a></div>
+	<div class="park" ng-repeat="park in parks">
+		<div ng-click="setSelectedPark(park)">{{park.park_name}}</div>
 	</div>
 
 </div>
