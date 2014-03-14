@@ -2,6 +2,7 @@
   <h3 class="text-muted">oregon coast</h3>
 </div>
 
+
 <div class="park-names">	
 	<div class="park" ng-repeat="park in parks">
 		<div ng-click="setSelectedPark(park)">{{park.park_name}}</div>
@@ -12,6 +13,10 @@
 <div class="park-details">
 
 	<h4>{{selectedPark.park_name}}</h4>
+
+	<div ng-repeat="picture in pictures">
+		<img class="instagram-pictures" src="{{picture.images.standard_resolution.url}}" />
+	</div>
 
 	<div ng-bind-html="selectedPark.park_narrative | unsafe">
 	</div>

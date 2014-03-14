@@ -8,11 +8,12 @@ angular.module('oregonCoastApp')
 
 		  	$http({
 		  		method: 'GET', 
-		  		url: 'https://api.instagram.com/v1/media/search?lat=44.659645&lng=-124.056381&client_id=0a9cfb02cb1b4cd2899d4fa6a9c00c19&distance=5000',
-		  		headers: {'Access-Control-Allow-Origin': '*'}
+		  		url: 'http://127.0.0.1:12200/instagram'
 		  	}).success(function(data, status, headers, config) {
 
-				deferred.resolve(data);
+		  		console.log(data);
+
+				deferred.resolve(data.data);
 
 
 		  	}).error(function (data, status, headers, config) {

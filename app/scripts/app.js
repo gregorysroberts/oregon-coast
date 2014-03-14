@@ -22,8 +22,10 @@ angular.module('oregonCoastApp', [
         resolve: {
           'parks': function(ParksService) {
              return ParksService.getParks();
+          },
+         'pictures': function(PicturesService) {
+          return PicturesService.getPictures();
           }
-        }
-      })
-
+      }
+    })
   });

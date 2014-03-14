@@ -83,6 +83,10 @@ body {
   width: 100%;
 }
 
+.instagram-pictures {
+  width: 85%;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
