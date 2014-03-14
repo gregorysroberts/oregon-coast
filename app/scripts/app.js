@@ -21,10 +21,7 @@ angular.module('oregonCoastApp', [
         controller: 'MainCtrl',
         resolve: {
           'parks': function(ParksService) {
-             return ParksService.getParks();
-          },
-         'pictures': function(PicturesService) {
-          return PicturesService.getPictures();
+            return ParksService.getParks();
           }
       }
     })

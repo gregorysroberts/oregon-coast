@@ -3,15 +3,20 @@
 angular.module('oregonCoastApp')
   .service('PicturesService', function PicturesService($q, $http) {
   	return {
-	    getPictures: function() {
+	    getPictures: function(lat, lng) {
+	    	console.log("getPictures was called");
+	    	console.log("this is lat and lng", lat, lng);
+
 		  	var deferred = $q.defer();
 
 		  	$http({
 		  		method: 'GET', 
-		  		url: 'http://127.0.0.1:12200/instagram'
+		  		url: 'http://127.0.0.1:12200/instagram',
+		  		headers: {
+		  			lat: lat,
+		  			lng: lng
+		  		}
 		  	}).success(function(data, status, headers, config) {
-
-		  		console.log(data);
 
 				deferred.resolve(data.data);
 
@@ -20,7 +25,7 @@ angular.module('oregonCoastApp')
 		  		deferred.reject(data);
 		  	});
 		  	return deferred.promise;
-		},
+		}
 	}
   });
 

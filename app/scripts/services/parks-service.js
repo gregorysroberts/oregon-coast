@@ -4,6 +4,8 @@ angular.module('oregonCoastApp')
   .service('ParksService', function ParksService($q, $http) {
   	return {
 	    getParks: function() {
+	    	console.log("getParks was called");
+	    	
 		  	var deferred = $q.defer();
 
 		  	$http({
@@ -17,7 +19,7 @@ angular.module('oregonCoastApp')
 		  		deferred.reject(data);
 		  	});
 		  	return deferred.promise;
-		},
+		}
 	}
     // AngularJS will instantiate a singleton by calling "new" on this function
   });
