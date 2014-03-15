@@ -4,7 +4,6 @@ angular.module('oregonCoastApp')
   .service('ParksService', function ParksService($q, $http) {
   	return {
 	    getParks: function() {
-	    	console.log("getParks was called");
 	    	
 		  	var deferred = $q.defer();
 
