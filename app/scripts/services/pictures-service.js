@@ -5,16 +5,16 @@ angular.module('oregonCoastApp')
   	return {
 	    getPictures: function(lat, lng) {
 
+	    	console.log("getPictures called")
+
 		  	var deferred = $q.defer();
 
 		  	$http({
 		  		method: 'GET', 
-		  		url: 'http://127.0.0.1:12200/instagram',
-		  		headers: {
-		  			lat: lat,
-		  			lng: lng
-		  		}
+		  		url: 'http://127.0.0.1:12200/instagram?lat=' + lat + '&lng=' + lng
 		  	}).success(function(data, status, headers, config) {
+
+		  		console.log(data.data);
 
 				deferred.resolve(data.data);
 

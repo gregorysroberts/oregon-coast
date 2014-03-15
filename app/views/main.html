@@ -1,5 +1,5 @@
 <div class="header">
-  <h3 class="text-muted">oregon coast</h3>
+  <h3 class="text-muted">oregon state parks</h3>
 </div>
 
 
@@ -14,7 +14,7 @@
 
 	<h4>{{selectedPark.park_name}}</h4>
 
-	<div ng-repeat="picture in pictures">
+	<div ng-repeat="picture in pictures" ng-if="pictures">
 		<img class="instagram-pictures" src="{{picture.images.standard_resolution.url}}" />
 	</div>
 

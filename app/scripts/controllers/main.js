@@ -5,9 +5,14 @@ angular.module('oregonCoastApp')
     $scope.parks = parks;
 
     $scope.selectedPark = parks[0];
+
+    $scope.pictures = null;
+
     $scope.setSelectedPark= function(park){
       $scope.selectedPark = park;
-      $scope.pictures = PicturesService.getPictures(park.park_latitude, park.park_longitude);
+      PicturesService.getPictures(park.park_latitude, park.park_longitude).then(function(pictures) {
+        $scope.pictures = pictures;
+      });
     };
 
     
