@@ -4,8 +4,6 @@ angular.module('oregonCoastApp')
   .service('PicturesService', function PicturesService($q, $http) {
   	return {
 	    getPictures: function(lat, lng) {
-	    	console.log("getPictures was called");
-	    	console.log("this is lat and lng", lat, lng);
 
 		  	var deferred = $q.defer();
 
