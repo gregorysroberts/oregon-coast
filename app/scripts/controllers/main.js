@@ -6,8 +6,6 @@ angular.module('oregonCoastApp')
 
     $scope.selectedPark = parks[0];
 
-    $scope.pictures = null;
-
     $scope.setSelectedPark= function(park){
       $scope.selectedPark = park;
       PicturesService.getPictures(park.park_latitude, park.park_longitude).then(function(pictures) {
