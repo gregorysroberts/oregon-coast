@@ -2,7 +2,8 @@
 
 angular.module('oregonCoastApp', [
   'ui.router',
-  'ngSanitize'
+  'ngSanitize',
+  'ui.bootstrap'
 ])
 
   .filter('unsafe', function($sce) {

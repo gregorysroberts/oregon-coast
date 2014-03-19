@@ -65,13 +65,13 @@ body {
   padding-left: 10%;
   display: inline;
   float: left;
-  width: 60%;
+  width: 65%;
 }
 
 .park-names {
   display: inline-block;
   float: left;
-  width: 40%;
+  width: 35%;
 }
 
 .park:hover {
@@ -85,6 +85,10 @@ body {
 
 .instagram-pictures {
   width: 85%;
+}
+
+.pictures-carousel {
+  height: 100%;
 }
 
 /* Responsive: Portrait tablets and up */

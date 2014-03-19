@@ -12,8 +12,6 @@ angular.module('oregonCoastApp')
 		  		url: 'http://oregonstateparks.org/data/index.cfm/parkPhotos?ParkId=' + park_id
 		  	}).success(function(data, status, headers, config) {
 
-		  		console.log(data);
-
 				deferred.resolve(data);
 
 
