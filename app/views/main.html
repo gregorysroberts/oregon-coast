@@ -3,9 +3,7 @@
 </div>
 
 <div class="navbar-left park-names">
-	<p>Search:
-		<input ng-model="search.park_name">
-	</p>
+	<input placeholder="search for a park . . ." ng-model="search.park_name">
 	<div>	
 		<div class="park" ng-repeat="park in parks | filter:search:strict">
 			<div ng-click="setSelectedPark(park)">{{park.park_name}}</div>
