@@ -14,14 +14,14 @@ angular.module('oregonCoastApp')
 
       StateParksPictures.getStateParksPictures(park.park_id).then(function(statePictures) {
         $scope.statePictures = statePictures;
-        console.log(statePictures);
       });
     };
 
     $scope.CarouselDemoCtrl = function($scope) {
       var slides = $scope.statePictures; 
-      console.log($scope.statePictures)
     }
     
   });
+
+  
 

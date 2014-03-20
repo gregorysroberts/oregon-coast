@@ -2,10 +2,14 @@
   <h3 class="text-muted">oregon state parks</h3>
 </div>
 
-
-<div class="park-names">	
-	<div class="park" ng-repeat="park in parks">
-		<div ng-click="setSelectedPark(park)">{{park.park_name}}</div>
+<div class="navbar-left park-names">
+	<p>Search:
+		<input ng-model="search.park_name">
+	</p>
+	<div>	
+		<div class="park" ng-repeat="park in parks | filter:search:strict">
+			<div ng-click="setSelectedPark(park)">{{park.park_name}}</div>
+		</div>
 	</div>
 </div>
 
@@ -13,7 +17,6 @@
 
 	<h4>{{selectedPark.park_name}}</h4>
 
-	<p>State Park Pictures</p>
 	<div ng-controller="CarouselDemoCtrl">
 	  <div class="pictures-carousel">
 	    <carousel>
@@ -29,12 +32,12 @@
 
 	<p>Instagram Pictures</p>
 	<div ng-controller="CarouselDemoCtrl">
-	  <div class="pictures-carousel">
-	    <carousel>
+	  <div >
+	    <carousel class="pictures-carousel">
 	      <slide ng-repeat="picture in pictures" active="picture.active">
 	        <img ng-src="{{picture.images.standard_resolution.url}}" style="margin:auto;">
 	        <div class="carousel-caption">
-	          <p>{{slide.text}}</p>
+	          <p style="vertical-align: top">{{picture.caption.text}}</p>
 	        </div>
 	      </slide>
 	    </carousel>

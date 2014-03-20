@@ -84,11 +84,16 @@ body {
 }
 
 .instagram-pictures {
-  width: 85%;
+  width: 100%;
 }
 
 .pictures-carousel {
   height: 100%;
+  margin-bottom: 20px;
+}
+
+input {
+  height: 13px;
 }
 
 /* Responsive: Portrait tablets and up */
