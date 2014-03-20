@@ -2,7 +2,7 @@
   <h3 class="text-muted">oregon state parks</h3>
 </div>
 
-<div class="navbar-left park-names">
+<div class="park-names">
 	<input placeholder="search for a park . . ." ng-model="search.park_name">
 	<div>	
 		<div class="park" ng-repeat="park in parks | filter:search:strict">
@@ -58,5 +58,4 @@
 	</div><!-- /.row -->
 
 </div>
-
 
