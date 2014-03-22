@@ -29,7 +29,6 @@ angular.module('oregonCoastApp')
     // } else {
 
     // };
-    console.log(park);
 
     var ref = new Firebase('https://oregoncoast.firebaseio.com/park=' );
       $scope.messages = $firebase(ref);
