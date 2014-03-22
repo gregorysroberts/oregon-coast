@@ -31,21 +31,21 @@ angular.module('oregonCoastApp')
     // };
 
       
-      $scope.addMessage = function(e){
+      // $scope.addMessage = function(e){
 
-          //this checks to make sure that the keydown is on the enter button (#13)
-          if(e.keyCode !== 13){
-              return;
-          }
+      //     //this checks to make sure that the keydown is on the enter button (#13)
+      //     if(e.keyCode !== 13){
+      //         return;
+      //     }
 
-          var ref = new Firebase('https://oregoncoast.firebaseio.com/' + );
-          $scope.parkMessages = $firebase(ref);
+      //     var ref = new Firebase('https://oregoncoast.firebaseio.com/' + );
+      //     $scope.parkMessages = $firebase(ref);
 
-          $scope.parkMessages.$add({
-                body: $scope.newMessage
-          });
-          $scope.newMessage = '';
-      }
+      //     $scope.parkMessages.$add({
+      //           body: $scope.newMessage
+      //     });
+      //     $scope.newMessage = '';
+      // }
     
   });
 
