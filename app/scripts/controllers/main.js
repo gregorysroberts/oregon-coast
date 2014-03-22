@@ -30,16 +30,18 @@ angular.module('oregonCoastApp')
 
     // };
 
-    var ref = new Firebase('https://oregoncoast.firebaseio.com/?park=');
-      $scope.messages = $firebase(ref);
+      
       $scope.addMessage = function(e){
 
           //this checks to make sure that the keydown is on the enter button (#13)
           if(e.keyCode !== 13){
               return;
           }
-          $scope.messages.$add({
-              park_id: $scope.selectedPark.park_id,
+
+          var ref = new Firebase('https://oregoncoast.firebaseio.com/' + );
+          $scope.parkMessages = $firebase(ref);
+
+          $scope.parkMessages.$add({
                 body: $scope.newMessage
           });
           $scope.newMessage = '';
