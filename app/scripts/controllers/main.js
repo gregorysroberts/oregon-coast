@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('oregonCoastApp')
-  .controller('MainCtrl', function ($scope, parks, PicturesService, StateParksPictures, $stateParams, $firebase, park) {
+  .controller('MainCtrl', function ($scope, parks, PicturesService, StateParksPictures, $stateParams, $firebase) {
     $scope.parks = parks;
 
     $scope.setSelectedPark= function(park){
