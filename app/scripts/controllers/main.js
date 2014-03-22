@@ -30,7 +30,7 @@ angular.module('oregonCoastApp')
 
     // };
 
-    var ref = new Firebase('https://oregoncoast.firebaseio.com/park=' );
+    var ref = new Firebase('https://oregoncoast.firebaseio.com/?park=');
       $scope.messages = $firebase(ref);
       $scope.addMessage = function(e){
 
