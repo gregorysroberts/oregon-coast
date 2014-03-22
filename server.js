@@ -15,7 +15,7 @@ app.configure(function(){
 	})
 });
 
-app.get('/', function(req, res) {
+app.get('/instagram', function(req, res) {
 	console.log("api request");
 	request("https://api.instagram.com/v1/media/search?lat=" + req.param('lat') + "&lng=" + req.param('lng') + "&client_id=0a9cfb02cb1b4cd2899d4fa6a9c00c19&distance=150", function(error, response, body) {
   		res.json(JSON.parse(body));
