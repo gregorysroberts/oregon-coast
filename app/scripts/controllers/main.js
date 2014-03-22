@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('oregonCoastApp')
-  .controller('MainCtrl', function ($scope, parks, PicturesService, StateParksPictures, $stateParams, $firebase) {
+  .controller('MainCtrl', function ($scope, parks, PicturesService, StateParksPictures, $stateParams, $firebase, park) {
     $scope.parks = parks;
 
     $scope.setSelectedPark= function(park){
@@ -17,6 +17,7 @@ angular.module('oregonCoastApp')
 
 
       $('html, body').animate({ scrollTop: 0 }, 0);
+
     };
 
     $scope.CarouselDemoCtrl = function($scope) {
@@ -28,10 +29,9 @@ angular.module('oregonCoastApp')
     // } else {
 
     // };
+    console.log(park);
 
-    // console.log($stateParams.park_id);
-
-    var ref = new Firebase('https://oregoncoast.firebaseio.com/');
+    var ref = new Firebase('https://oregoncoast.firebaseio.com/park=' );
       $scope.messages = $firebase(ref);
       $scope.addMessage = function(e){
 
@@ -41,7 +41,7 @@ angular.module('oregonCoastApp')
           }
           $scope.messages.$add({
               park_id: $scope.selectedPark.park_id,
-              body: $scope.newMessage
+                body: $scope.newMessage
           });
           $scope.newMessage = '';
       }
