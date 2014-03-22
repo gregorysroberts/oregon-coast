@@ -24,11 +24,7 @@ angular.module('oregonCoastApp')
       var slides = $scope.statePictures; 
     }
 
-    // if (typeof $stateParams.park_id == 'number') {
-    //   $scope.setSelectedPark
-    // } else {
-
-    // };
+    $scope.setSelectedPark(parks[0]);
 
       
       // $scope.addMessage = function(e){
