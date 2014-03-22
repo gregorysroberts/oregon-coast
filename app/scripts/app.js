@@ -3,7 +3,8 @@
 angular.module('oregonCoastApp', [
   'ui.router',
   'ngSanitize',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'firebase'
 ])
 
   .filter('unsafe', function($sce) {
@@ -16,14 +17,15 @@ angular.module('oregonCoastApp', [
 
     $urlRouterProvider.otherwise("/");
 
-    $stateProvider.state('main', {
-        url: '/',
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        resolve: {
-          'parks': function(ParksService) {
-            return ParksService.getParks();
-          }
+    $stateProvider
+    .state('main', {
+      url: '/:park_id',
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl',
+      resolve: {
+        'parks': function(ParksService) {
+          return ParksService.getParks();
+        }
       }
     })
   });

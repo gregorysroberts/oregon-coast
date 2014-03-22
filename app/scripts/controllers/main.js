@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('oregonCoastApp')
-  .controller('MainCtrl', function ($scope, parks, PicturesService, StateParksPictures) {
+  .controller('MainCtrl', function ($scope, parks, PicturesService, StateParksPictures, $stateParams, $firebase) {
     $scope.parks = parks;
 
     $scope.setSelectedPark= function(park){
@@ -23,21 +23,28 @@ angular.module('oregonCoastApp')
       var slides = $scope.statePictures; 
     }
 
-    $scope.setSelectedPark(parks[0]);
+    // if (typeof $stateParams.park_id == 'number') {
+    //   $scope.setSelectedPark
+    // } else {
 
-    // var ref = new Firebase('https://myfirstapp12345.firebaseio.com/');
-    //   $scope.messages = $firebase(ref);
-    //   $scope.addMessage = function(e){
+    // };
 
-    //       //this checks to make sure that the keydown is on the enter button (#13)
-    //       if(e.keyCode !== 13){
-    //           return;
-    //       }
-    //       $scope.messages.$add({
-    //           body: $scope.newMessage
-    //       });
-    //       $scope.newMessage = '';
-    //   }
+    // console.log($stateParams.park_id);
+
+    var ref = new Firebase('https://oregoncoast.firebaseio.com/');
+      $scope.messages = $firebase(ref);
+      $scope.addMessage = function(e){
+
+          //this checks to make sure that the keydown is on the enter button (#13)
+          if(e.keyCode !== 13){
+              return;
+          }
+          $scope.messages.$add({
+              park_id: $scope.selectedPark.park_id,
+              body: $scope.newMessage
+          });
+          $scope.newMessage = '';
+      }
     
   });
 
