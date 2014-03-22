@@ -4,9 +4,7 @@ angular.module('oregonCoastApp')
   .controller('MainCtrl', function ($scope, parks, PicturesService, StateParksPictures) {
     $scope.parks = parks;
 
-    $scope.selectedPark = parks[0];
-
-    $scope.setSelectedPark= function(park, $location, $anchorScroll){
+    $scope.setSelectedPark= function(park){
       $scope.selectedPark = park;
       PicturesService.getPictures(park.park_latitude, park.park_longitude).then(function(pictures) {
         $scope.pictures = pictures;
@@ -16,6 +14,8 @@ angular.module('oregonCoastApp')
       StateParksPictures.getStateParksPictures(park.park_id).then(function(statePictures) {
         $scope.statePictures = statePictures;
       });
+
+
       $('html, body').animate({ scrollTop: 0 }, 0);
     };
 
@@ -23,16 +23,7 @@ angular.module('oregonCoastApp')
       var slides = $scope.statePictures; 
     }
 
-    // $scope.ScrollCtrl = function ($scope, $location, $anchorScroll) {
-    //   $scope.gotoTop = function (){
-    //     // set the location.hash to the id of
-    //     // the element you wish to scroll to.
-    //     $location.hash('bottom');
-     
-    //     // call $anchorScroll()
-    //     $anchorScroll();
-    //   };
-    // }
+    $scope.setSelectedPark(parks[0]);
 
     // var ref = new Firebase('https://myfirstapp12345.firebaseio.com/');
     //   $scope.messages = $firebase(ref);
