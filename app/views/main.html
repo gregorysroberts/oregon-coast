@@ -45,6 +45,8 @@
 	<div ng-bind-html="selectedPark.park_narrative | unsafe">
 	</div>
 
+	<div ng-repeat="parkTip in parkMessages"><p>{{parkTip.body}}</p></div>
+
 	<h4>Area Tips</h4>	
 	<div class="row">
 	  <div class="col-lg-6">

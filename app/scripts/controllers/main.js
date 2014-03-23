@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('oregonCoastApp')
-  .controller('MainCtrl', function ($scope, parks, PicturesService, StateParksPictures, $stateParams, $firebase) {
+  .controller('MainCtrl', function ($scope, parks, PicturesService, StateParksPictures, ParksTipService, $stateParams, $firebase) {
     $scope.parks = parks;
 
     $scope.setSelectedPark= function(park){
@@ -13,6 +13,10 @@ angular.module('oregonCoastApp')
 
       StateParksPictures.getStateParksPictures(park.park_id).then(function(statePictures) {
         $scope.statePictures = statePictures;
+      });
+
+      ParksTipService.getParksTips(park.park_id).then(function(parkTips) {
+        $scope.parkTips = parkTips;
       });
 
 
@@ -44,21 +48,3 @@ angular.module('oregonCoastApp')
       }
     
   });
-
-  // angular.module('chatFirebaseApp', ['firebase'])
-  // .controller('MainCtrl', function ($scope, $firebase) {
-  // var ref = new Firebase('https://myfirstapp12345.firebaseio.com/');
-  //       $scope.messages = $firebase(ref);
-  //       $scope.addMessage = function(e){
-
-  //           //this checks to make sure that the keydown is on the enter button (#13)
-  //           if(e.keyCode !== 13){
-  //               return;
-  //           }
-  //           $scope.messages.$add({
-  //               body: $scope.newMessage
-  //           });
-  //           console.log("messages")
-  //           $scope.newMessage = '';
-  //       }
-  // });
