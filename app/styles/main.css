@@ -122,6 +122,11 @@ input {
   padding-right: 50px;
 }
 
+.form-control {
+  width: 80%;
+  margin-left: 10px;
+}
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -156,5 +161,11 @@ input {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .park-details {
+    color: red;
   }
 }

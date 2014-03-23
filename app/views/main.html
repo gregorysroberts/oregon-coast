@@ -45,18 +45,12 @@
 	<div ng-bind-html="selectedPark.park_narrative | unsafe">
 	</div>
 
-	<div ng-repeat="parkTip in parkMessages"><p>{{parkTip.body}}</p></div>
-
 	<h4>Area Tips</h4>	
+	<div ng-repeat="parkTip in parkMessages">
+		<p>{{parkTip.body}}</p>
+	</div>
 	<div class="row">
-	  <div class="col-lg-6">
-	    <div class="input-group">
-	      <input type="text" class="form-control" ng-model="newMessage" ng-keydown="addMessage($event)">
-	      <span class="input-group-btn">
-	        <button class="btn btn-default" type="button">Leave a Tip</button>
-	      </span>
-	    </div><!-- /input-group -->
-	  </div><!-- /.col-lg-6 -->
+	    <input type="text" class="form-control" ng-model="newMessage" ng-keydown="addMessage($event)" placeholder="Leave a tip . . .">
 	</div><!-- /.row -->
 
 </div>
