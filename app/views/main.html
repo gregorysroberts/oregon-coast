@@ -2,15 +2,6 @@
   <h3 class="text-muted" id="bottom">oregon state parks</h3>
 </div>
 
-<div class="park-names">
-	<input placeholder="search for a park . . ." ng-model="search.park_name">
-	<div>	
-		<div class="park" ng-repeat="park in parks | filter:search:strict">
-			<div ng-click="setSelectedPark(park)">{{park.park_name}}</div>
-		</div>
-	</div>
-</div>
-
 <div class="park-details">
 
 	<h4>{{selectedPark.park_name}}</h4>
@@ -53,5 +44,14 @@
 	    <input type="text" class="form-control" ng-model="newMessage" ng-keydown="addMessage($event)" placeholder="Leave a tip . . .">
 	</div><!-- /.row -->
 
+</div>
+
+<div class="park-names">
+	<input placeholder="search for a park . . ." ng-model="search.park_name">
+	<div>	
+		<div class="park" ng-repeat="park in parks | filter:search:strict">
+			<div ng-click="setSelectedPark(park)">{{park.park_name}}</div>
+		</div>
+	</div>
 </div>
 

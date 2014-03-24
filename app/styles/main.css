@@ -62,7 +62,7 @@ body {
 /*  display: none;*/
   padding-left: 10%;
   display: inline;
-  float: left;
+  float: right;
   width: 65%;
 }
 
@@ -167,5 +167,13 @@ input {
 @media screen and (max-width: 800px) {
   .park-details {
     color: red;
+    float: left;
+    width: 100%;
   }
+
+  .park-names {
+    float: right;
+    width: 100%;
+  }
+
 }
