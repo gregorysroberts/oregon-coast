@@ -70,7 +70,8 @@ body {
 .park-names {
   display: inline-block;
   float: left;
-  width: 35%;
+  width: 33%;
+  margin-right: 2%;
 }
 
 .park:hover {

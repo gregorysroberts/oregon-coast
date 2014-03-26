@@ -19,7 +19,7 @@ angular.module('oregonCoastApp', [
 
     $stateProvider
     .state('main', {
-      url: '/:park_id',
+      url: '/',
       templateUrl: 'views/main.html',
       controller: 'MainCtrl',
       resolve: {
