@@ -64,6 +64,7 @@ body {
   display: inline;
   float: right;
   width: 65%;
+  border-left: 1px solid #999999;
 }
 
 .park-names {
