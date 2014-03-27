@@ -29,7 +29,7 @@
     <!-- Add your site or application content here -->
     <div class="container" ui-view></div>
 
-
+  <!--
     <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
@@ -38,7 +38,6 @@
           status     : true,
           xfbml      : true
         });
-
         FB.Event.subscribe('auth.authResponseChange', function(response) {
             if (response.status === 'connected') {
               testAPI();        
@@ -48,7 +47,6 @@
                 FB.login();
             }
         });
-
         FB.ui({
           method: 'feed',
           link: 'https://developers.facebook.com/docs/dialogs/',
@@ -56,10 +54,7 @@
           description: ('This is an example description'),
           picture: 'insert img url here'
         }, function(response){});
-
       };
-
-
       (function(d){
          var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
          if (d.getElementById(id)) {return;}
@@ -75,6 +70,7 @@
           });
       }
     </script>
+    -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
