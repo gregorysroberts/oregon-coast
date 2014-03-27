@@ -4,9 +4,6 @@
 
 <div class="park-details">
 
-	<div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
-	<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
-
 	<h4>{{selectedPark.park_name}}</h4>
 
 	<div ng-controller="CarouselDemoCtrl">
@@ -47,6 +44,9 @@
 	    <input type="text" class="form-control" ng-model="newMessage" ng-keydown="addMessage($event)" placeholder="Leave a tip . . .">
 	</div><!-- /.row -->
 
+	<div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
+	<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+	
 </div>
 
 <div class="park-names">
