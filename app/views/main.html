@@ -33,6 +33,9 @@
 	  </div>
 	</div>
 
+	<div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
+	<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+
 	<div ng-bind-html="selectedPark.park_narrative | unsafe">
 	</div>
 
@@ -44,9 +47,6 @@
 	    <input type="text" class="form-control" ng-model="newMessage" ng-keydown="addMessage($event)" placeholder="Leave a tip . . .">
 	</div><!-- /.row -->
 
-	<div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
-	<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
-	
 </div>
 
 <div class="park-names">
