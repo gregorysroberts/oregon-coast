@@ -15,12 +15,6 @@ angular.module('oregonCoastApp')
         $scope.statePictures = statePictures;
       });
 
-      // ParksTipService.getParksTips(park.park_id).then(function(parkTips) {
-      //   $scope.parkTips = parkTips;
-      //   console.log(parkTips);
-      // });
-
-
         var ref = new Firebase('https://oregoncoast.firebaseio.com/' + $scope.selectedPark.park_id);
         $scope.parkMessages = $firebase(ref);
       
