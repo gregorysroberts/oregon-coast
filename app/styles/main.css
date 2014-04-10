@@ -2,6 +2,12 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background: #ffffff url('http://upload.wikimedia.org/wikipedia/commons/2/27/OregonCoastEcola.jpg') 100% 0% no-repeat fixed;
+}
+
+body > div {
+  color: #FDFDFD;
+  background: rgba(139, 139, 139, 0.5);
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -14,7 +20,7 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #FDFDFD;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -22,6 +28,7 @@ body {
   margin-bottom: 0;
   line-height: 40px;
   padding-bottom: 19px;
+  color: #FDFDFD;
 }
 
 /* Custom page footer */
@@ -64,7 +71,7 @@ body {
   display: inline;
   float: right;
   width: 65%;
-  border-left: 1px solid #999999;
+  border-left: 1px solid #FDFDFD;
 }
 
 .park-names {
