@@ -8,7 +8,6 @@ angular.module('oregonCoastApp')
       $scope.selectedPark = park;
       PicturesService.getPictures(park.park_latitude, park.park_longitude).then(function(pictures) {
         $scope.pictures = pictures;
-
       });
 
       StateParksPictures.getStateParksPictures(park.park_id).then(function(statePictures) {
