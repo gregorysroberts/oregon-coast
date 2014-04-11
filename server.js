@@ -2,10 +2,13 @@ var express = require('express');
 
 var request = require("request");
 
+var bodyParser = require('body-parser');
+
 var app = express();
 
-app.configure(function(){
-	app.use(express.bodyParser());
+var env = process.env.NODE_ENV || 'development';
+if ('development' == env) {
+	app.use(bodyParser());
 	app.use(function(req, res, next){
 		res.setHeader('Access-Control-Allow-Origin', '*');
 		res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST');
@@ -13,7 +16,7 @@ app.configure(function(){
 		res.type('application/json');
 		next();
 	})
-});
+};
 
 app.get('/instagram', function(req, res) {
 	console.log("api request");
