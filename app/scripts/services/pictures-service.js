@@ -9,7 +9,7 @@ angular.module('oregonCoastApp')
 
 		  	$http({
 		  		method: 'GET', 
-		  		url: 's/instagram?lat=' + lat + '&lng=' + lng
+		  		url: '/instagram?lat=' + lat + '&lng=' + lng
 		  	}).success(function(data, status, headers, config) {
 		  		
 				deferred.resolve(data.data);
