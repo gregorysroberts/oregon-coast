@@ -2,9 +2,8 @@
   "name": "oregoncoast",
   "version": "0.0.0",
   "dependencies": {
-        "express": "*",
-        "request": "*",
-        "body-parser": "*"
+        "express": "~3.4.8",
+        "request": "*"
     },
   "devDependencies": {
     "grunt": "~0.4.1",
