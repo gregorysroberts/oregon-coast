@@ -1,57 +1,58 @@
-<div class="header">
-  <img src="images/parklust-logo.png">
-</div>
-
-<div class="park-details">
-
-	<h4>{{selectedPark.park_name}}</h4>
-
-	<div ng-controller="CarouselDemoCtrl">
-	  <div class="pictures-carousel">
-	    <carousel>
-	      <slide ng-repeat="statePicture in statePictures">
-	        <img ng-src="{{statePicture.imageFile}}" style="margin:auto;">
-	        <div class="carousel-caption">
-	          <p>{{slide.text}}</p>
-	        </div>
-	      </slide>
-	    </carousel>
-	  </div>
+<div class="container">
+	<div class="header">
+	  <img src="images/parklust-logo.png">
 	</div>
 
-	<p>Instagram Pictures</p>
-	<div ng-controller="CarouselDemoCtrl">
-	  <div >
-	    <carousel class="pictures-carousel">
-	      <slide ng-repeat="picture in pictures" active="picture.active">
-	        <img ng-src="{{picture.images.standard_resolution.url}}" style="margin:auto;">
-	        <div class="carousel-caption">
-	          <p style="vertical-align: top">{{picture.caption.text}}</p>
-	        </div>
-	      </slide>
-	    </carousel>
-	  </div>
+	<div class="park-details">
+
+		<h4>{{selectedPark.park_name}}</h4>
+
+		<div ng-controller="CarouselDemoCtrl">
+		  <div class="pictures-carousel">
+		    <carousel>
+		      <slide ng-repeat="statePicture in statePictures">
+		        <img ng-src="{{statePicture.imageFile}}" style="margin:auto;">
+		        <div class="carousel-caption">
+		          <p>{{slide.text}}</p>
+		        </div>
+		      </slide>
+		    </carousel>
+		  </div>
+		</div>
+
+		<p>Instagram Pictures</p>
+		<div ng-controller="CarouselDemoCtrl">
+		  <div >
+		    <carousel class="pictures-carousel">
+		      <slide ng-repeat="picture in pictures" active="picture.active">
+		        <img ng-src="{{picture.images.standard_resolution.url}}" style="margin:auto;">
+		        <div class="carousel-caption">
+		          <p style="vertical-align: top">{{picture.caption.text}}</p>
+		        </div>
+		      </slide>
+		    </carousel>
+		  </div>
+		</div>
+
+		<div ng-bind-html="selectedPark.park_narrative | unsafe">
+		</div>
+
+		<h4>Area Tips</h4>	
+		<div ng-repeat="parkTip in parkMessages">
+			<p>{{parkTip.body}}</p>
+		</div>
+		<div class="row">
+		    <input type="text" class="form-control" ng-model="newMessage" ng-keydown="addMessage($event)" placeholder="Leave a tip . . .">
+		</div><!-- /.row -->
+
 	</div>
 
-	<div ng-bind-html="selectedPark.park_narrative | unsafe">
-	</div>
-
-	<h4>Area Tips</h4>	
-	<div ng-repeat="parkTip in parkMessages">
-		<p>{{parkTip.body}}</p>
-	</div>
-	<div class="row">
-	    <input type="text" class="form-control" ng-model="newMessage" ng-keydown="addMessage($event)" placeholder="Leave a tip . . .">
-	</div><!-- /.row -->
-
-</div>
-
-<div class="park-names">
-	<input placeholder="search for a park . . ." ng-model="search.park_name">
-	<div>	
-		<div class="park" ng-repeat="park in parks | filter:search:strict">
-			<div ng-click="setSelectedPark(park)">{{park.park_name}}</div>
+	<div class="park-names">
+		<input placeholder="search for a park . . ." ng-model="search.park_name">
+		<div>	
+			<div class="park" ng-repeat="park in parks | filter:search:strict">
+				<div ng-click="setSelectedPark(park)"><a href='/#/parks/{{park.park_name}}'>{{park.park_name}}</a></div>
+			</div>
 		</div>
 	</div>
 </div>
-

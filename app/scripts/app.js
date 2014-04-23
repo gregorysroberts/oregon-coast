@@ -18,8 +18,12 @@ angular.module('oregonCoastApp', [
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
-    .state('main', {
+    .state('home', {
       url: '/',
+      templateUrl: 'views/home.html'
+    })
+    .state('main', {
+      url: '/parks/:park_id',
       templateUrl: 'views/main.html',
       controller: 'MainCtrl',
       resolve: {
